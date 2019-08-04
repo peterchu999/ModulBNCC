@@ -12,13 +12,14 @@
         @isset($book)
             <h1>Edit Book</h1>
             <input type="hidden" name="id" value="{{$book->id}}">
-        @endisset
-        <input type="text" name="nama" placeholder="nama"><br>
-        <input type="text" name="warna" placeholder="warna"><br>
-        <input type="text" name="tahun" placeholder="tahun"><br>
-        @isset($book)
-            <button type="submit" formaction="{{url('/update')}}"></button>
+            <input type="text" name="nama" value="{{$book->book_name}}" placeholder="nama"><br>
+            <input type="text" name="warna" value="{{$book->book_color}}" placeholder="warna"><br>
+            <input type="text" name="tahun" value="{{$book->book_year}}" placeholder="tahun"><br>
+            <button type="submit" formaction="{{url('/update')}}">Update Book</button>
         @else
+            <input type="text" name="nama" placeholder="nama"><br>
+            <input type="text" name="warna" placeholder="warna"><br>
+            <input type="text" name="tahun" placeholder="tahun"><br>
             <input type="submit">
         @endisset
     </form>
