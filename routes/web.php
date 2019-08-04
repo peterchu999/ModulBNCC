@@ -22,3 +22,7 @@ Route::get('/asd', function () {
 
 Route::get('/vru','BookController@CheckBook');
 Route::post('/asd','BookController@Delete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
