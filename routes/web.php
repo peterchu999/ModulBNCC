@@ -23,4 +23,9 @@ Route::post('/edit-book','BookController@updateView');
 
 
 Route::get('/vru','BookController@CheckBook');
-Route::post('/asd','BookController@addBook');
+
+Route::post('/asd','BookController@Delete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
