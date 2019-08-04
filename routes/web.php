@@ -19,6 +19,9 @@ Route::get('/add-book',function (){
 Route::post('/delete-book','BookController@delete');
 Route::post('/update','BookController@update');
 Route::post('/edit-book','BookController@updateView');
+Route::get('/',function(){
+    return view('welcome');
+});
 
 
 
@@ -28,4 +31,4 @@ Route::post('/asd','BookController@Delete');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('isAdmin');

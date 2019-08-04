@@ -7,7 +7,7 @@
     <title>Library</title>
 </head>
 <body>
-    @isset($books)
+    @empty($books)
         @foreach($books as $book)
         <form action="{{url('/edit-book')}}" method="POST">
                 @csrf
@@ -20,6 +20,6 @@
         @endforEach
     @else
         <h1>Tidak ada buku yang tersedia</h1>
-    @endisset
+    @endempty
 </body>
 </html>
