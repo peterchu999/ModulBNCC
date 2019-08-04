@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     public function Books(){
-        return $this->hasOne('App\Book');
+        return $this->hasMany('App\Book');
     }
 }
 
