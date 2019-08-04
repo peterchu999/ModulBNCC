@@ -11,14 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/library','BookController@checkBook');
+Route::post('/add-book','BookController@addBook');
+Route::get('/add-book',function (){
+    return view('addBook');
 });
+Route::post('/delete-book','BookController@delete');
+Route::post('/update','BookController@update');
+Route::post('/edit-book','BookController@updateView');
 
-Route::get('/asd', function () {
-    return view('addbook');
-});
 
 
 Route::get('/vru','BookController@CheckBook');
-Route::post('/asd','BookController@Delete');
+Route::post('/asd','BookController@addBook');

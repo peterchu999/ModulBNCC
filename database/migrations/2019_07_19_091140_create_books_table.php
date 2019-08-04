@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
             $table->String('book_name');
             $table->String('book_color');
             $table->String('book_year');
-            $table->unsignedBiginteger('user_id');
+            $table->unsignedBiginteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             //$table->Int('id');
             //$table->primary('id');

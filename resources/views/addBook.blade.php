@@ -7,13 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{url('/asd')}}" method="POST">
+    <form action="{{url('/add-book')}}" method="POST">
         @csrf
-        <input type="text" name="id">
-        <input type="text" name="nama">
-        <input type="text" name="warna">
-        <input type="text" name="tahun">
-        <input type="submit">
+        @isset($book)
+            <h1>Edit Book</h1>
+            <input type="hidden" name="id" value="{{$book->id}}">
+        @endisset
+        <input type="text" name="nama" placeholder="nama"><br>
+        <input type="text" name="warna" placeholder="warna"><br>
+        <input type="text" name="tahun" placeholder="tahun"><br>
+        @isset($book)
+            <button type="submit" formaction="{{url('/update')}}"></button>
+        @else
+            <input type="submit">
+        @endisset
     </form>
-</body>
+</body> 
 </html>
